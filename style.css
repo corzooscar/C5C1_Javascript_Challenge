@@ -97,7 +97,7 @@ select option {
     justify-content: center;
     justify-items: center;
     text-align: center;
-    /* Crea columnas automáticas que se adaptan al espacio */
+    /* Create automatics columns that they adapt to the space*/
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
     list-style: none; 
