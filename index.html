@@ -1,21 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Rick and Morty - Val, Kev & Oczo</title>
 </head>
-<header class="header">
-    <img src="Resources/Rick_and_Morty.svg" alt="Logo Rick y Morty" style="width: 15%;">    
-</header>
+
 <body>
-    <main>  
-        <ul id="character" class="contenedorGrid"></ul> 
-        <button id="loadMore" data-next="" data-prev="" onclick="loadMore()">Cargar más</button>
+    <header class="header">
+<!-- Filters Container -->
+        <div>
+            <select id="genderFilter">
+                <option value="">All Genders</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="genderless">Genderless</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <select id="statusFilter">
+                <option value="">All Status</option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <button onclick="applyFilters()">Filter</button>
+        </div>
+<!-- Main Logo -->
+        <img src="Resources/Rick_and_Morty.svg" alt="Logo Rick y Morty" style="width: 15%;">
+<!-- Page Counter -->
+        <span id="pageCounter" class="page-counter"></span>
+    </header>
+    <main>
+<!-- Navigation Buttons -->
+        <div class="buttonContainer">
+            <button id="prev" data-prev="" onclick="loadLess()">Previous Page</button>
+            <button id="next" data-next="" onclick="loadMore()">Next Page</button>
+        </div>
+<!-- Loading Text -->
+        <div id="loading" class="loading-text" style="display: none;">Loading Characters....</div>
+<!-- Grid -->
+        <ul id="character" class="containerGrid"></ul>
     </main>
+<!-- Footer -->
+    <footer class="footer">
+        <h1>Rick and Morty</h1>
+        <p>&copy; 2026 - Made by Val, Kev & Oczo (Also David)</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.16/dist/axios.min.js"></script>
     <script src="prueba.js"></script>
 </body>
 </html>
